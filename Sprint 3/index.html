@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skyyy — Live Weather</title>
+
+  <!-- favicon: inline SVG emoji, no image file needed -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛅</text></svg>"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- SPLASH -->
+  <div id="splash">
+    <!-- SVG icon — no external file needed -->
+    <svg id="splash-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" rx="22" fill="#29B6D5"/>
+      <!-- sun rays -->
+      <circle cx="58" cy="36" r="4" fill="#FFD600"/>
+      <circle cx="72" cy="26" r="4" fill="#FFD600"/>
+      <circle cx="82" cy="40" r="4" fill="#FFD600"/>
+      <circle cx="80" cy="56" r="4" fill="#FFD600"/>
+      <circle cx="44" cy="22" r="4" fill="#FFD600"/>
+      <circle cx="30" cy="32" r="4" fill="#FFD600"/>
+      <!-- sun body -->
+      <circle cx="57" cy="40" r="20" fill="#FFD600"/>
+      <!-- cloud -->
+      <ellipse cx="45" cy="68" rx="32" ry="20" fill="#E8EAED"/>
+      <circle  cx="28" cy="70" r="16" fill="#E8EAED"/>
+      <circle  cx="60" cy="68" r="14" fill="#E8EAED"/>
+      <circle  cx="44" cy="58" r="14" fill="#E8EAED"/>
+    </svg>
+  </div>
+
+  <!-- SKY CANVAS -->
+  <div id="sky">
+    <div class="cloud c1" id="c1"></div>
+    <div class="cloud c2" id="c2"></div>
+    <div class="cloud c3" id="c3"></div>
+    <div class="cloud c4" id="c4"></div>
+    <div class="cloud c5" id="c5"></div>
+    <div class="rain-wrap" id="rain-wrap"></div>
+    <div class="snow-wrap" id="snow-wrap"></div>
+    <div class="bolt-wrap" id="bolt-wrap"></div>
+    <div class="mist"      id="mist"></div>
+  </div>
+
+  <!-- APP -->
+  <div id="app">
+    <div class="logo-row">
+      <!-- same SVG, small version -->
+      <svg id="logo-small" class="logo-small" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="22" fill="#29B6D5"/>
+        <circle cx="58" cy="36" r="4" fill="#FFD600"/>
+        <circle cx="72" cy="26" r="4" fill="#FFD600"/>
+        <circle cx="82" cy="40" r="4" fill="#FFD600"/>
+        <circle cx="80" cy="56" r="4" fill="#FFD600"/>
+        <circle cx="44" cy="22" r="4" fill="#FFD600"/>
+        <circle cx="30" cy="32" r="4" fill="#FFD600"/>
+        <circle cx="57" cy="40" r="20" fill="#FFD600"/>
+        <ellipse cx="45" cy="68" rx="32" ry="20" fill="#E8EAED"/>
+        <circle  cx="28" cy="70" r="16" fill="#E8EAED"/>
+        <circle  cx="60" cy="68" r="14" fill="#E8EAED"/>
+        <circle  cx="44" cy="58" r="14" fill="#E8EAED"/>
+      </svg>
+      <h1 class="app-title">Skyyy</h1>
+    </div>
+    <p class="app-sub">Real-time weather, beautifully alive</p>
+
+    <div class="search-wrap">
+      <div class="search-bar">
+        <input id="city-input" type="text" placeholder="Search a city..." autocomplete="off"/>
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="suggestions"></div>
+    </div>
+
+    <div class="error-msg" id="error-msg"></div>
+    <div class="loading"   id="loading">Fetching weather...</div>
+
+    <div class="unit-row">
+      <button class="unit-btn" id="unit-btn">Switch to °F</button>
+    </div>
+
+    <div class="weather-card" id="weather-card">
+      <div class="city-name"    id="city-name">—</div>
+      <span class="country-tag" id="country-tag"></span>
+      <div class="main-weather">
+        <img class="wx-icon" id="wx-icon" src="" alt="icon"/>
+        <div>
+          <div class="temperature" id="temperature">—</div>
+          <div class="condition"   id="condition">—</div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Humidity</div>
+          <div class="stat-value" id="humidity">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Feels Like</div>
+          <div class="stat-value" id="feels-like">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Wind</div>
+          <div class="stat-value" id="wind">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
