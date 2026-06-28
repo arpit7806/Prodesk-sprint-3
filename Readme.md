@@ -4,6 +4,8 @@
 A cinematic, real-time weather web application built with vanilla HTML, CSS, and JavaScript. Skyyy fetches live weather data from the OpenWeatherMap API and renders it with dynamic sky animations that react to actual weather conditions.
 
 🔗 **Live Demo:** [https://prodesk-sprint-3.vercel.app/](https://prodesk-sprint-3.vercel.app/)
+<img width="1917" height="1151" alt="Screenshot 2026-06-28 210916" src="https://github.com/user-attachments/assets/7da7543f-8fe9-4df9-94f0-cfc15cc6b7a8" />
+
 
 ---
 
@@ -45,36 +47,6 @@ skyyy/
 ├── style.css       # All styles, animations & sky effects
 └── app.js          # API logic, DOM rendering, sky engine
 ```
-
----
-
-## ⚙️ Setup & Run Locally
-
-**1. Clone the repo**
-```bash
-git clone https://github.com/arpit7806/prodesk-sprint-3.git
-cd prodesk-sprint-3
-```
-
-**2. Get a free API key**
-- Sign up at [openweathermap.org](https://openweathermap.org/api)
-- Go to **My Profile → API Keys** and copy your key
-- Keys activate within ~10 minutes of signup
-
-**3. Add your API key**
-
-Open `app.js` and replace the key on line 2:
-```js
-const K = "YOUR_API_KEY_HERE";
-```
-
-**4. Run locally**
-
-Open `index.html` in VS Code and use the **Live Server** extension, or run:
-```bash
-python -m http.server 5500
-```
-Then visit `http://localhost:5500`
 
 ---
 
